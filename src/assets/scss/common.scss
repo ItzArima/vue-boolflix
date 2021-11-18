@@ -40,27 +40,43 @@
 .main-container{
     padding: 0 1rem;
 
-    .content-container{
+    .films-container{
 
-        .search-container{
-            height: 30px;
+        .content-container{
+            
+            .search-container{
+                height: 30px;
 
-            label{
-                font-size: x-large;
-                line-height: 100%;
+                label{
+                    font-size: x-large;
+                    line-height: 100%;
+                }
+
+                input{
+                    height: 100%;
+                    margin-left: 2rem;
+                }
+
+                button{
+                    margin-left: 2rem;
+                    height: 100%;
+                    padding: 0 0.5rem;
+                    font-size: large;
+                }
             }
 
-            input{
-                height: 100%;
-                margin-left: 2rem;
-            }
+        }
 
-            button{
-                margin-left: 2rem;
-                height: 100%;
-                padding: 0 0.5rem;
-                font-size: large;
+        .results-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .film{
+                width: 20%;
+                display: flex;
+                justify-content: center;
             }
         }
-    }
+    }    
 }
