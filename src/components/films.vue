@@ -3,7 +3,22 @@
         <search @runApi="getApi"/>
         <div class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
-                <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
+                <div class="img-container">    
+                    <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
+                </div>
+                <h2>{{film.title}}</h2>
+                <div class="original-title-container">
+                    <p>Original title -</p>
+                    <p> > {{film.original_title}}</p>
+                </div>
+                <div class="language-container">
+                    <p>Original language -</p>
+                    <p> > {{film.original_language}}</p>
+                </div>
+                <div class="vote-container">
+                    <p>Vote -</p>
+                    <p> > {{film.vote_average}}</p>
+                </div>
             </div>
         </div>
     </div>
