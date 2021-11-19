@@ -14,6 +14,7 @@
                 <div class="language-container">
                     <p>Original language -</p>
                     <p> > {{film.original_language}}</p>
+                    
                 </div>
                 <div class="vote-container">
                     <p>Vote -</p>
@@ -49,6 +50,7 @@ export default {
                 .then(r => {
                     console.log(r.data.results);
                     this.elements = r.data.results;
+                    this.elements.original_language = '../assets/img/flags/'+this.elements.original_language+'.png'
                 })
                 .catch(e=>{
                     console.log(e)
