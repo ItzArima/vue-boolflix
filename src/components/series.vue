@@ -1,30 +1,34 @@
 <template>
     <div class="films-container">
-        <search @runApi="getApi" :selection="this.selection"/>
+        <search @runApi="getApi" :selection="selection"/>
         <div class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
-                    <div v-if="film.poster_path != null" class="image-verifier">   
-                        <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
-                    </div>    
-                    <div v-else class="no-image">
-                        <h1>No Image</h1>
+                    <div class="film-image">
+                        <div v-if="film.poster_path != null" class="image-verifier">   
+                            <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
+                        </div>    
+                        <div v-else class="no-image">
+                            <h1>No Image</h1>
+                        </div>
                     </div>
-                </div>
-                <h2>{{film.title}}</h2>
-                <div class="original-title-container">
-                    <p>Original title -</p>
-                    <p> > {{film.original_title}}</p>
-                </div>
-                <div class="language-container">
-                    <p>Original language -</p>
-                    <p> > {{film.original_language}}</p>
-                    <img :src="require(`../assets/img/flags/${film.original_language}.png`)" alt="">
-                </div>
-                <div class="vote-container">
-                    <p>Vote -</p>
-                    <p> > {{film.vote_average}}</p>
-                </div>
+                    <div class="film-infos">
+                        <h2>{{film.name}}</h2>
+                        <div class="original-title-container">
+                            <p>Original title -</p>
+                            <p> > {{film.original_name}}</p>
+                        </div>
+                        <div class="language-container">
+                            <p>Original language -</p>
+                            <p> > {{film.original_language}}</p>
+                            <img :src="require(`../assets/img/flags/${film.original_language}.png`)" alt="">
+                        </div>
+                        <div class="vote-container">
+                            <p>Vote -</p>
+                            <votes :vote ="film.vote_average"/>
+                        </div>
+                    </div>    
+                </div>    
             </div>
         </div>
     </div>
@@ -33,12 +37,14 @@
 <script>
 import axios from 'axios'
 import search from './search.vue'
+import votes from './votes.vue'
 
 export default {
     name : 'series',
 
     components :{
         search,
+        votes,
     },
 
     props:{
