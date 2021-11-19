@@ -4,9 +4,12 @@
         <div v-if="resett == 0" class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
-                    <div v-if="film.posterpath =! null" class="image-verifier">   
+                    <div v-if="film.poster_path != null" class="image-verifier">   
                         <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
                     </div>    
+                    <div v-else class="image-verifier">
+                        <h1>No Image</h1>
+                    </div>
                 </div>
                 <h2>{{film.title}}</h2>
                 <div class="original-title-container">
