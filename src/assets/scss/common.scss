@@ -92,8 +92,8 @@
                     width: 300px;
                     align-self: center;
 
-                    .image-verifier{
-
+                    .no-image{
+                        border: 1px solid white;
                         h1{
                             text-align: center;
                             line-height: 450px;
@@ -112,11 +112,24 @@
                         height: 15px;
                         width: 20px;
                         margin-left: 0.5rem;
+                       
                     }
                 }
 
                 .vote-container{
                     display: flex;
+                    align-items: baseline;
+
+                    p{
+                        justify-self: center;
+                    }
+
+                    img{
+                        height: 10px;
+                        width: 15px;
+                        filter: invert(1);
+                        
+                    }
                 }
             }
         }

@@ -1,13 +1,13 @@
 <template>
     <div class="films-container">
-        <search @runApi="getApi" :selection="this.selection"/>
+        <search @runApi="getApi" :selection="selection"/>
         <div class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
                     <div v-if="film.poster_path != null" class="image-verifier">   
                         <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
                     </div>    
-                    <div v-else class="image-verifier">
+                    <div v-else class="no-image">
                         <h1>No Image</h1>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="vote-container">
                     <p>Vote -</p>
-                    <p> > {{film.vote_average}}</p>
+                    <votes :vote ="film.vote_average"/>
                 </div>
             </div>
         </div>
@@ -33,12 +33,14 @@
 <script>
 import axios from 'axios'
 import search from './search.vue'
+import votes from './votes.vue'
 
 export default {
     name : 'films',
 
     components :{
         search,
+        votes,
     },
 
     props:{
@@ -61,6 +63,7 @@ export default {
                     console.log(r.data.results);
                     this.elements = r.data.results;
                     this.elements.original_language = '../assets/img/flags/'+this.elements.original_language+'.png'
+                    votes()
                 })
                 .catch(e=>{
                     console.log(e)

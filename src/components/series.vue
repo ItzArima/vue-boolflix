@@ -7,7 +7,7 @@
                     <div v-if="film.poster_path != null" class="image-verifier">   
                         <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
                     </div>    
-                    <div v-else class="image-verifier">
+                    <div v-else class="no-image">
                         <h1>No Image</h1>
                     </div>
                 </div>
