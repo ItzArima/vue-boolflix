@@ -3,8 +3,10 @@
         <search @runApi="getApi"/>
         <div class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
-                <div class="img-container">    
-                    <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
+                <div  class="img-container"> 
+                    <div v-if="film.posterpath =! null" class="image-verifier">   
+                        <img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt="" srcset="">
+                    </div>    
                 </div>
                 <h2>{{film.title}}</h2>
                 <div class="original-title-container">
@@ -14,7 +16,7 @@
                 <div class="language-container">
                     <p>Original language -</p>
                     <p> > {{film.original_language}}</p>
-                    
+                    <img :src="require(`../assets/img/flags/${film.original_language}.png`)" alt="">
                 </div>
                 <div class="vote-container">
                     <p>Vote -</p>
