@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <siteHeader @films ="films" @series="series" />
+    <siteHeader @selection="typeSelection" />
     <siteMain :selection="selection" :reset="reset" />
     <siteFooter />
   </div>  
@@ -22,22 +22,24 @@ export default {
   data(){
     return {
       selection : "films",
-      elements : [],
       reset: 0,
     }
   },
 
   methods:{
-    films(){
+    /* films(){
       this.selection = 'films'
       console.log(this.selection);
-      this.reset = 1;
+      this.reset = 0;
     },
     series(){
       this.selection = 'series'
       console.log(this.selection);
-      this.reset = 1;
-    },
+      this.reset = 0;
+    }, */
+    typeSelection(type){
+      this.selection = type
+    }
   },
 
   computed:{

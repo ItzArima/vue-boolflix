@@ -35,7 +35,7 @@ import axios from 'axios'
 import search from './search.vue'
 
 export default {
-    name : 'films',
+    name : 'series',
 
     components :{
         search,
@@ -69,11 +69,13 @@ export default {
         
         getApi(searchInput){
             console.log(searchInput);
-            var api = api = 'https://api.themoviedb.org/3/search/movie?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false';
+            var api = api = 'https://api.themoviedb.org/3/search/tv?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
             console.log(api);
             this.myApi = api
             this.launchApi();
         },
+
+
     },
 }
 </script>

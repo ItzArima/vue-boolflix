@@ -1,24 +1,22 @@
 <template>
     <div class="main-container">
         <h1>Welcome to Ros</h1>
-        <films :selection="this.selection" :reset="this.reset"/>
+        <films v-if="selection == 'films'" :selection="selection" :reset="reset"/>
+        <series v-else-if="selection == 'series'" :selection="selection" />
     </div>
 </template>
 
 <script>
 import films from './films.vue'
+import series from './series.vue'
 
 export default {
     name: "siteMain",
     components :{
-        films
+        films,
+        series,
     },
 
-    data(){
-        return{
-            fselection : "",
-        }
-    },
 
     props :{
         selection : String,
