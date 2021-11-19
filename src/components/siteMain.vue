@@ -1,7 +1,7 @@
 <template>
     <div class="main-container">
         <h1>Welcome to Ros</h1>
-        <films :selection="this.selection"/>
+        <films :selection="this.selection" :reset="this.reset"/>
     </div>
 </template>
 
@@ -24,6 +24,12 @@ export default {
         selection : String,
         reset : Number,
     },
+
+    computed:{
+        resetting(){
+            return this.reset
+        }
+    }
 };
 </script>
 

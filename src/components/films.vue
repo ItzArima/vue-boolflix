@@ -1,7 +1,7 @@
 <template>
     <div class="films-container">
         <search @runApi="getApi" :selection="this.selection"/>
-        <div v-if="reset == 0" class="results-container">
+        <div v-if="resett == 0" class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
                     <div v-if="film.posterpath =! null" class="image-verifier">   
@@ -76,15 +76,19 @@ export default {
             }
             console.log(api);
             this.myApi = api
+            if(this.reset == 1){
+                this.reset = 0
+            }
             this.launchApi();
-            this.reset = 0
+            console.log(this.reset);
         }
     },
 
     computed :{
         resett(){
             console.log(this.reset);
-            return this.reset
+            var x =this.reset
+            return x
         }
     }
 }

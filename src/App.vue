@@ -31,13 +31,12 @@ export default {
     films(){
       this.selection = 'films'
       console.log(this.selection);
-      console.log(this.elements);
       this.reset = 1;
     },
     series(){
       this.selection = 'series'
       console.log(this.selection);
-      this.reset = 0;
+      this.reset = 1;
     },
   },
 
