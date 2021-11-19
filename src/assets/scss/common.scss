@@ -22,16 +22,19 @@
         display: flex;
         justify-content: right;
         align-items: center;
+        line-height: 100%;
 
-        a{
+
+        p{
             margin: 0 2rem;
             text-decoration: none;
             color: white;
-            height: 100%;
             padding-bottom: 0.25rem;
+            border: 1px solid #021b42;
 
             &:hover{
                 border-bottom: 1px solid white;
+                cursor: pointer;
             }
         }
     }

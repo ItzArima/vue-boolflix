@@ -1,7 +1,7 @@
 <template>
     <div class="films-container">
-        <search @runApi="getApi"/>
-        <div class="results-container">
+        <search @runApi="getApi" :selection="this.selection"/>
+        <div v-if="reset == 0" class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
                     <div v-if="film.posterpath =! null" class="image-verifier">   
@@ -38,10 +38,16 @@ export default {
         search,
     },
 
+    props:{
+        selection : String,
+        reset : Number
+    },
+
     data(){
         return{
             elements : [],
             myApi : '',
+            resetElement : this.reset
         }
     },
 
@@ -61,10 +67,24 @@ export default {
         
         getApi(searchInput){
             console.log(searchInput);
-            var api = 'https://api.themoviedb.org/3/search/movie?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
+            var api;
+            if(this.selection === 'films'){
+                api = 'https://api.themoviedb.org/3/search/movie?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
+            }
+            else if(this.selection === 'series'){
+                api = 'https://api.themoviedb.org/3/search/tv?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
+            }
             console.log(api);
             this.myApi = api
             this.launchApi();
+            this.reset = 0
+        }
+    },
+
+    computed :{
+        resett(){
+            console.log(this.reset);
+            return this.reset
         }
     }
 }

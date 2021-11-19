@@ -4,20 +4,22 @@
               <h1>Ros</h1>
         </div>
         <div class="nav-container">
-            <div class="nav">
-                <a href="">Home</a>
-                <a href="">Films</a>
-                <a href="">Series</a>
-                <a href="">Contacts</a>
-                <a href="">About Us</a>
-            </div>
+            <p @click="$emit('films')">Films</p>
+            <p @click="$emit('series')">Series</p>
+            <p>About Us</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name : 'siteHeader'
+    name : 'siteHeader',
+
+    data(){
+        return {
+            selection : ""
+        }
+    }
 }
 </script>
 

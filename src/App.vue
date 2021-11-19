@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <siteHeader />
-    <siteMain />
+    <siteHeader @films ="films" @series="series" />
+    <siteMain :selection="selection" :reset="reset" />
     <siteFooter />
   </div>  
 </template>
@@ -17,6 +17,32 @@ export default {
     siteHeader,
     siteMain,
     siteFooter
+  },
+
+  data(){
+    return {
+      selection : "films",
+      elements : [],
+      reset: 0,
+    }
+  },
+
+  methods:{
+    films(){
+      this.selection = 'films'
+      console.log(this.selection);
+      console.log(this.elements);
+      this.reset = 1;
+    },
+    series(){
+      this.selection = 'series'
+      console.log(this.selection);
+      this.reset = 0;
+    },
+  },
+
+  computed:{
+
   }
 }
 </script>

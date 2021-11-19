@@ -1,8 +1,8 @@
 <template>
     <div class="content-container">
         <div class="search-container">
-            <label for="Search">Search a film</label>
-            <input type="text" name="Search" v-model="searchInput" placeholder="Serach a film" />
+            <label for="Search">Search {{selection}}</label>
+            <input type="text" name="Search" v-model="searchInput" :placeholder="'Serach '+this.selection" />
             <button @click="$emit('runApi',searchInput)">Search</button>
         </div>
     </div>
@@ -16,6 +16,10 @@ export default {
         return{
             searchInput : "",
         }
+    },
+
+    props:{
+        selection:String,
     }
 
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="main-container">
         <h1>Welcome to Ros</h1>
-        <films />
+        <films :selection="this.selection"/>
     </div>
 </template>
 
@@ -12,7 +12,18 @@ export default {
     name: "siteMain",
     components :{
         films
-    }
+    },
+
+    data(){
+        return{
+            fselection : "",
+        }
+    },
+
+    props :{
+        selection : String,
+        reset : Number,
+    },
 };
 </script>
 
