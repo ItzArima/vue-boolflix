@@ -26,6 +26,11 @@
                             <p>Vote -</p>
                             <votes :vote ="film.vote_average"/>
                         </div>
+                        <h3>Overview:</h3>
+                        <div class="overview-container">
+                            
+                            <p>{{film.overview}}</p>
+                        </div>
                     </div>    
                 </div>    
             </div>

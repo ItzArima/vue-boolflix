@@ -133,6 +133,7 @@
                             h1{
                                 text-align: center;
                                 line-height: 450px;
+                                color: #555;
                             }
                         }
                     }    
@@ -141,8 +142,8 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        height: 100%;
-                        width: 100%;
+                        height: 450px;
+                        width: 300px;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -150,6 +151,8 @@
                         filter: opacity(0);
                         transition: .7s ease-in-out;
                         transform: scale(1.1);
+                        overflow: auto;
+                        padding: 1rem 0;
 
                         h2{
                             text-align: center;
@@ -185,7 +188,27 @@
                                 filter: invert(1);
                                 
                             }
-                        }    
+                        } 
+                        
+                        .overview-container{
+                            overflow: auto;
+
+                            &::-webkit-scrollbar {
+                                width: 5px;
+                            }
+                            &::-webkit-scrollbar-track {
+                                background: #f1f1f1; 
+                                border-radius: 10px;
+                            }
+                            &::-webkit-scrollbar-thumb {
+                                background: #888; 
+                                border-radius: 10px;
+                            }
+                            &::-webkit-scrollbar-thumb:hover {
+                                background: #555; 
+                            } 
+                            padding: 0 1rem;
+                        }
                     }
                 }
             }
