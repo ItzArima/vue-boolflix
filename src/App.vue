@@ -50,6 +50,6 @@ export default {
 
 <style lang="scss">
   @import "./assets/scss/common.scss";
-  @import url('https://fonts.googleapis.com/css2?family=Genos:wght@200&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
 
 </style>

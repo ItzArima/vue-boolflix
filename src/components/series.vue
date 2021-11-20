@@ -15,12 +15,11 @@
                     <div class="film-infos">
                         <h2>{{film.name}}</h2>
                         <div class="original-title-container">
-                            <p>Original title -</p>
-                            <p> > {{film.original_name}}</p>
+                            <p>{{film.original_name}}</p>
                         </div>
                         <div class="language-container">
-                            <p>Original language -</p>
-                            <p> > {{film.original_language}}</p>
+                            <p>Language -</p>
+                            <p>{{film.original_language}}</p>
                             <img :src="require(`../assets/img/flags/${film.original_language}.png`)" alt="">
                         </div>
                         <div class="vote-container">
