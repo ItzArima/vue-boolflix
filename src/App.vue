@@ -19,9 +19,10 @@ export default {
     siteFooter
   },
 
+  
   data(){
     return {
-      selection : "films",
+      selection : "home",
       reset: 0,
     }
   },

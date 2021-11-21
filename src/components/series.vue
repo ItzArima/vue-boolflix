@@ -69,7 +69,6 @@ export default {
                 .then(r => {
                     console.log(r.data.results);
                     this.elements = r.data.results;
-                    this.elements.original_language = '../assets/img/flags/'+this.elements.original_language+'.png'
                 })
                 .catch(e=>{
                     console.log(e)

@@ -71,7 +71,6 @@ export default {
                     console.log(r.data.results);
                     this.elements = r.data.results;
                     this.elements.original_language = '../assets/img/flags/'+this.elements.original_language+'.png'
-                    votes()
                 })
                 .catch(e=>{
                     console.log(e)

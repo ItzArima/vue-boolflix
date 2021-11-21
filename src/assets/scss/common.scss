@@ -12,6 +12,8 @@
     position: sticky;
     top: 0;
     z-index: 2;
+    height: 80px;
+    line-height: 80px;
 
     .logo-container{
         width: 10%;
@@ -46,10 +48,10 @@
 .main-container{
     padding: 0 1rem;
     background-color: black;
-    
+    min-height: calc(100vh - 80px);
 
     .films-container{
-        min-height: 100vh;
+
 
         .content-container{
             color: white;
@@ -81,7 +83,6 @@
         .results-container{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             color: white;
 
             .film{
@@ -95,25 +96,6 @@
                     width: 300px;
                     align-self: center;
                     position: relative;
-                    
-
-                    &:hover{
-                        cursor: pointer;
-
-                        .film-image{
-                            
-                            img{
-                                -webkit-filter: blur(2px);
-                                filter: blur(2px) brightness(0.5);
-                                
-                            }
-                        }
-                        
-                        .film-infos{
-                            filter: opacity(1);
-                        }    
-                        
-                    }
 
                     .film-image{
                         height: 450px;
@@ -142,7 +124,7 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        height: 450px;
+                        height: 225px;
                         width: 300px;
                         display: flex;
                         flex-direction: column;
@@ -150,9 +132,6 @@
                         align-items: center;
                         filter: opacity(0);
                         transition: .7s ease-in-out;
-                        transform: scale(1.1);
-                        overflow: auto;
-                        padding: 1rem 0;
 
                         h2{
                             text-align: center;
@@ -160,6 +139,7 @@
 
                         .original-title-container{
                             display: flex;
+                            text-align: center;
                         }
         
                         .language-container{
@@ -191,8 +171,7 @@
                         } 
                         
                         .overview-container{
-                            overflow: auto;
-
+                            overflow-y: auto;
                             &::-webkit-scrollbar {
                                 width: 5px;
                             }
@@ -211,7 +190,82 @@
                         }
                     }
                 }
+                &:hover{
+                    cursor: pointer;
+                    .film-infos{
+                        height: 430px;  
+                    }
+
+                    .film-image{
+                        
+                        img{
+                            -webkit-filter: blur(2px);
+                            filter: blur(2px) brightness(0.5);
+                            
+                        }
+                    }
+                    
+                    .film-infos{
+                        filter: opacity(1);
+                    }   
+                }
             }
         }
-    }    
+    }  
+    .home-container{
+        color: white;
+        min-height: 100vh;
+    }
+    
+}
+
+.home-container{
+    .films-container{
+        position: relative;
+        .popular-title{
+            padding: 1.5rem 0;
+        }
+
+        .scroll-container{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            
+            .scroll-left{
+                margin-right: 0.5rem;
+            }
+
+            .scroll-right{
+                margin-left: 0.5rem;
+            }
+
+            .scroll-left , .scroll-right{
+                height: 450px;
+                display: flex;
+                z-index: 1;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            img{
+                width: 25px;
+                filter: invert(1);
+            }
+        }
+
+        .results-container{
+            flex-wrap: nowrap !important;
+            overflow-y: hidden;
+    
+              
+        }
+    }  
+
 }
