@@ -51,6 +51,7 @@ export default {
 
 <style lang="scss">
   @import "./assets/scss/common.scss";
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
 
 </style>

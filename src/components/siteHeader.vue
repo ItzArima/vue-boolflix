@@ -1,7 +1,8 @@
 <template>
     <div class="header-container">
         <div class="logo-container">
-              <h1>Ros</h1>
+                <h1 class="thin">CINE</h1>
+                <h1 class="bold">ROS</h1>
         </div>
         <div class="nav-container">
             <p @click="$emit('selection','home')">Home</p>
