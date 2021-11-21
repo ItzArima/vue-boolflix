@@ -28,18 +28,9 @@ export default {
   },
 
   methods:{
-    /* films(){
-      this.selection = 'films'
-      console.log(this.selection);
-      this.reset = 0;
-    },
-    series(){
-      this.selection = 'series'
-      console.log(this.selection);
-      this.reset = 0;
-    }, */
     typeSelection(type){
       this.selection = type
+      window.scrollTo(0,0)
     }
   },
 

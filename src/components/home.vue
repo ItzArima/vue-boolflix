@@ -5,7 +5,7 @@
                 <source src="../assets/videos/cineros-vieo-loop.mp4">
             </video>
             <div class="video-text">
-                <h1>WELCOME TO <em>ROS</em></h1>
+                <h1>WELCOME TO <em>CINEROS</em></h1>
                 <p>The portal of films and series</p>
             </div>
         </div>    
