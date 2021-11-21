@@ -1,6 +1,5 @@
 <template>
     <div class="main-container">
-        <h1>Welcome to Ros</h1>
         <films v-if="selection == 'films'" :selection="selection"/>
         <series v-else-if="selection == 'series'" :selection="selection" />
         <home v-else-if="selection == 'home'" />

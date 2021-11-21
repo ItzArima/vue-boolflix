@@ -1,5 +1,5 @@
 <template>
-    <div class="films-container popular">
+    <div class="films-container popular-films">
         <div class="popular-title">
             <h1>Most Popular Films</h1>
         </div>

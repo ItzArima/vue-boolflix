@@ -55,7 +55,6 @@
 }
 
 .main-container{
-    padding: 0 1rem;
     background-color: black;
     min-height: calc(100vh - 80px);
     font-family: 'Outfit', sans-serif;
@@ -230,10 +229,50 @@
 }
 
 .home-container{
+    video{
+        width: 100%;
+    }
+
+    .home-content{
+        padding: 0 1rem;
+        position: relative;
+        top: -80px;
+    }
+
+    .video-container{
+        position: relative;
+        top: -80px;
+
+        .video-text{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h1{
+                font-weight: 900;
+                font-size: 50px;
+                em{
+                    font-style: normal;
+                    font-weight: 200;
+                }
+            }  
+            
+            p{
+                font-size: x-large;
+            }
+        }
+    }
+
     .films-container{
         position: relative;
         .popular-title{
-            padding: 1.5rem 0;
+            padding-bottom: 1rem;
         }
 
         .scroll-container{
