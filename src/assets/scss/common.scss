@@ -22,6 +22,10 @@
         display: flex;
         font-family: 'Kanit', sans-serif !important;
 
+        &:hover{
+            cursor: pointer;
+        }
+
         .thin{
             font-weight: 100;
         }

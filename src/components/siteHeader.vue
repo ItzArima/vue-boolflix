@@ -1,6 +1,6 @@
 <template>
     <div class="header-container">
-        <div class="logo-container">
+        <div class="logo-container" @click="$emit('selection','home')">
                 <h1 class="thin">CINE</h1>
                 <h1 class="bold">ROS</h1>
         </div>
