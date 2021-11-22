@@ -1,9 +1,7 @@
 <template>
   <div class="genres-container">
       <div class="genre" v-for="element in namesOfGenre" :key="element.id">
-          <div :class="element">
-
-          </div>
+          <p>{{element}},</p>
       </div>
   </div>
 </template>
