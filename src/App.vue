@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="app-container">
     <siteHeader @selection="typeSelection" />
     <siteMain :selection="selection" :reset="reset" />
     <siteFooter />

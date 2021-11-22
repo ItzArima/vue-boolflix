@@ -1,8 +1,11 @@
 <template>
-  <div class="casts-container">
-      <div v-for="element in sliceCasts" :key="element.id" class="actor">
-          <span>{{element.name}},</span>
-      </div>
+  <div class="casts-container" v-if="castsArray.length > 0">
+      <h3>Casts:</h3>
+      <div class="actors">
+        <div v-for="element in sliceCasts" :key="element.id" class="actor">
+            <span>{{element.name}},</span>
+        </div>
+      </div>  
   </div>
 </template>
 

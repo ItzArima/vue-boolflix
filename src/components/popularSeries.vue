@@ -20,7 +20,6 @@
                         <div class="original-title-container">
                             <p>{{film.original_name}}</p>
                         </div>
-                        <h3>Casts:</h3>
                         <casts :id="film.id"/>
                         <div class="language-container">
                             <p>Language -</p>
