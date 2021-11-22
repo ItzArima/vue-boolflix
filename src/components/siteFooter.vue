@@ -1,5 +1,8 @@
 <template>
-  <h1>this is the site footer</h1>
+  <div class="footer-container">
+    <p>Template made by Ros</p>
+    <p>© Copyright 2021 Copyright.it - All Rights Reserved</p>
+  </div>
 </template>
 
 <script>
