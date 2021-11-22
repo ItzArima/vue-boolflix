@@ -29,7 +29,7 @@ export default {
             .get('https://api.themoviedb.org/3/genre/movie/list?api_key=80d8049aea831dd859481c955e96072b&language=en-US')
             .then(resp => {
                 this.genres = resp.data.genres
-                console.log(this.array);
+                console.log(this.genres);
             })
             .catch(e=>{
                 console.log(e)

@@ -62,9 +62,10 @@
     .films-container{
 
 
-        .content-container{
+        .filter-search-container{
             padding-top: 1rem;
             color: white;
+            display: flex;
             .search-container{
                 height: 30px;
                 margin-bottom: 2rem;
@@ -89,6 +90,19 @@
                 }
             }
 
+            .filter-container{
+                height: 100%;
+                margin-left: 2rem;
+
+                label{
+                    font-size: x-large;
+                }
+
+                select{
+                    height: 30px;
+                    margin-left: 1rem;
+                }
+            }
         }
 
         .results-container{

@@ -1,6 +1,6 @@
 <template>
     <div class="films-container">
-        <search @runApi="getApi" :selection="selection"/>
+        <search @runApi="getApi" :selection="selection" @gFilter="gFilter" :visibility="fVisible"/>
         <div class="results-container">
             <div v-for="film in elements" :key="film.id" class="film">
                 <div  class="img-container"> 
@@ -66,7 +66,8 @@ export default {
         return{
             elements : [],
             myApi : '',
-            resetElement : ''
+            resetElement : '',
+            fVisible : false
         }
     },
 
@@ -84,11 +85,14 @@ export default {
         },
         
         getApi(searchInput){
-            console.log(searchInput);
-            var api = api = 'https://api.themoviedb.org/3/search/tv?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
-            console.log(api);
-            this.myApi = api
-            this.launchApi();
+            if(searchInput !=""){
+                console.log(searchInput);
+                var api = api = 'https://api.themoviedb.org/3/search/tv?api_key=80d8049aea831dd859481c955e96072b&language=en-US&query='+ searchInput+'&page=1&include_adult=false'
+                console.log(api);
+                this.myApi = api
+                this.launchApi();
+                this.fvisible = true
+            }    
         },
 
 
