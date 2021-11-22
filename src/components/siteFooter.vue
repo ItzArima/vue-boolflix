@@ -1,7 +1,7 @@
 <template>
   <div class="footer-container">
     <p>Template made by Ros</p>
-    <p>© Copyright 2021 Copyright.it - All Rights Reserved</p>
+    <p>© Copyright 2021 CineRos.it - All Rights Reserved</p>
   </div>
 </template>
 
