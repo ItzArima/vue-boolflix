@@ -20,11 +20,15 @@
                         <div class="original-title-container">
                             <p>{{film.original_name}}</p>
                         </div>
+                        <h3>Casts:</h3>
+                        <casts :id="film.id"/>
                         <div class="language-container">
                             <p>Language -</p>
                             <p>{{film.original_language}}</p>
                             <img :src="require(`../assets/img/flags/${film.original_language}.png`)" alt="">
                         </div>
+                        <h3>Genres:</h3>
+                        <genres :genresArray="film.genre_ids"/>
                         <div class="vote-container">
                             <p>Vote -</p>
                             <votes :vote ="film.vote_average"/>
@@ -45,6 +49,8 @@
     import axios from 'axios'
     import votes from './votes'
     import scroll from './scroll'
+    import casts from './casts.vue'
+    import genres from './genres.vue'
 
     export default{
         name : 'popularSeries',
@@ -60,7 +66,9 @@
 
         components:{
             votes,
-            scroll
+            scroll,
+            casts,
+            genres
         },
 
         mounted() {

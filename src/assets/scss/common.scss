@@ -152,10 +152,20 @@
                             display: flex;
                             text-align: center;
                         }
-        
+                        
+                        .casts-container,.genres-container{
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                        }
+
                         .language-container{
                             display: flex;
                             align-items: center;
+
+                            p:first-of-type{
+                                font-weight: 900;
+                            }
                             
                             img{
                                 height: 15px;
